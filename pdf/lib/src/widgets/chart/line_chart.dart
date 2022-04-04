@@ -90,6 +90,9 @@ class LineDataSet extends Dataset {
       final p = grid.toChart(data[i].point);
 
       if (!isCurved) {
+        if(p.x != null && p.y == 0){
+           context.canvas.lineTo(p.x,50);
+        }
         context.canvas.lineTo(p.x, p.y);
         continue;
       }
